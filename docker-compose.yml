@@ -2,6 +2,6 @@ version: "3.9"
 services:
   notifier:
     restart: always
-    image: ghcr.io/ezhevita/hetznerservicenotifier:latest
+    image: ghcr.io/ezhevita/hetznerservernotifier:latest
     volumes:
       - "./appsettings.json:/app/appsettings.json"
