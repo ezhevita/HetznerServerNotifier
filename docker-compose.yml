@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  notifier:
+    restart: always
+    image: ghcr.io/ezhevita/hetznerservicenotifier:latest
+    volumes:
+      - "./data:/app/data"
+      - "./appsettings.json:/app/appsettings.json"
