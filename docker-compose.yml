@@ -4,5 +4,4 @@ services:
     restart: always
     image: ghcr.io/ezhevita/hetznerservicenotifier:latest
     volumes:
-      - "./data:/app/data"
       - "./appsettings.json:/app/appsettings.json"
