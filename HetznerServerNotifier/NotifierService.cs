@@ -34,7 +34,9 @@ public class NotifierService : BackgroundService
 			try
 			{
 				await Run();
+#pragma warning disable CA1031
 			} catch (Exception e)
+#pragma warning restore CA1031
 			{
 				_logger.ExceptionOccurred(e);
 			}
