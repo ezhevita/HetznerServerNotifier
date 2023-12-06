@@ -7,7 +7,7 @@ namespace HetznerServerNotifier;
 public static class ServicesExtensions
 {
 	public static IServiceCollection AddListFilter<T>(this IServiceCollection serviceCollection,
-		Func<FilterConfiguration, ISet<T>> configAccessor, Func<ServerInfo, T> serverAccessor)
+		Func<FilterConfiguration, ISet<T>> configAccessor, Func<ServerInfo, IList<T>> serverAccessor)
 	{
 		serviceCollection.AddSingleton<IFilter, ListFilter<T>>(
 			sp => new ListFilter<T>(

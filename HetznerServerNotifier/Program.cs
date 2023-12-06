@@ -13,7 +13,7 @@ services.AddRangeFilter(config => config.Price, server => server.Price)
 	.AddRangeFilter(config => config.Cores, server => server.Cores)
 	.AddRangeFilter(config => config.Frequency, server => server.Frequency)
 	.AddRangeFilter(config => config.Ram, server => server.Ram)
-	.AddListFilter(config => config.Location, server => server.Datacenters.First().ShortName);
+	.AddListFilter(config => config.Location, server => server.Datacenters.Select(x => x.ShortName).ToList());
 
 services.AddSingleton<ITelegramBotClient, TelegramBotClient>(
 	sp =>
