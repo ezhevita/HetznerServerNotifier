@@ -31,7 +31,13 @@ public class NotifierService : BackgroundService
 	{
 		while (true)
 		{
-			await Run();
+			try
+			{
+				await Run();
+			} catch (Exception e)
+			{
+				_logger.ExceptionOccurred(e);
+			}
 
 			try
 			{
@@ -54,7 +60,7 @@ public class NotifierService : BackgroundService
 
 		if (data == null)
 		{
-			LoggerMethods.ErrorRetrievingData(_logger);
+			_logger.ErrorRetrievingData();
 			return;
 		}
 
